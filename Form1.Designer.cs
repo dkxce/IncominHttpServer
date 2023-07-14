@@ -33,6 +33,10 @@
             this.startstop = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearCountersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateDDNSHostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resolveDDNSHostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mipBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.prcLog = new System.Windows.Forms.TextBox();
@@ -47,7 +51,27 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.defInvoke = new System.Windows.Forms.NumericUpDown();
             this.procInvCB = new System.Windows.Forms.CheckBox();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.ddnsView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.daBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.deBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.ddBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.drBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.dcBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.dwBtr = new System.Windows.Forms.ToolStripMenuItem();
+            this.duBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.r1Btn = new System.Windows.Forms.ToolStripMenuItem();
+            this.rrBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ddnsLink = new System.Windows.Forms.LinkLabel();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.ipcsCB = new System.Windows.Forms.CheckBox();
             this.oosCB = new System.Windows.Forms.CheckBox();
             this.onTopCB = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -66,7 +90,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.clearCountersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mypLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -76,6 +101,9 @@
             this.tabPage5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.defInvoke)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.defPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.defCode)).BeginInit();
@@ -101,16 +129,48 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clearToolStripMenuItem,
-            this.clearCountersToolStripMenuItem});
+            this.clearCountersToolStripMenuItem,
+            this.updateDDNSHostsToolStripMenuItem,
+            this.resolveDDNSHostsToolStripMenuItem,
+            this.toolStripMenuItem4,
+            this.mipBtn});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 142);
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.clearToolStripMenuItem.Text = "Clear Logs";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
+            // 
+            // clearCountersToolStripMenuItem
+            // 
+            this.clearCountersToolStripMenuItem.Name = "clearCountersToolStripMenuItem";
+            this.clearCountersToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.clearCountersToolStripMenuItem.Text = "Clear Counters";
+            this.clearCountersToolStripMenuItem.Click += new System.EventHandler(this.clearCountersToolStripMenuItem_Click);
+            // 
+            // updateDDNSHostsToolStripMenuItem
+            // 
+            this.updateDDNSHostsToolStripMenuItem.Name = "updateDDNSHostsToolStripMenuItem";
+            this.updateDDNSHostsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.updateDDNSHostsToolStripMenuItem.Text = "Update DDNS Hosts";
+            this.updateDDNSHostsToolStripMenuItem.Click += new System.EventHandler(this.updateDDNSHostsToolStripMenuItem_Click);
+            // 
+            // resolveDDNSHostsToolStripMenuItem
+            // 
+            this.resolveDDNSHostsToolStripMenuItem.Name = "resolveDDNSHostsToolStripMenuItem";
+            this.resolveDDNSHostsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.resolveDDNSHostsToolStripMenuItem.Text = "Resolve DDNS Hosts";
+            this.resolveDDNSHostsToolStripMenuItem.Click += new System.EventHandler(this.resolveDDNSHostsToolStripMenuItem_Click);
+            // 
+            // mipBtn
+            // 
+            this.mipBtn.Name = "mipBtn";
+            this.mipBtn.Size = new System.Drawing.Size(181, 22);
+            this.mipBtn.Text = "Resolve My IP";
+            this.mipBtn.Click += new System.EventHandler(this.mipBtn_Click);
             // 
             // tabControl1
             // 
@@ -119,6 +179,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
@@ -290,8 +351,168 @@
             this.procInvCB.UseVisualStyleBackColor = true;
             this.procInvCB.CheckedChanged += new System.EventHandler(this.toggleprocInvCB);
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.ddnsView);
+            this.tabPage7.Controls.Add(this.panel2);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(793, 374);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "DDNS";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // ddnsView
+            // 
+            this.ddnsView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ddnsView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.ddnsView.ContextMenuStrip = this.contextMenuStrip2;
+            this.ddnsView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ddnsView.FullRowSelect = true;
+            this.ddnsView.HideSelection = false;
+            this.ddnsView.Location = new System.Drawing.Point(3, 3);
+            this.ddnsView.Name = "ddnsView";
+            this.ddnsView.ShowGroups = false;
+            this.ddnsView.Size = new System.Drawing.Size(787, 343);
+            this.ddnsView.TabIndex = 0;
+            this.ddnsView.UseCompatibleStateImageBehavior = false;
+            this.ddnsView.View = System.Windows.Forms.View.Details;
+            this.ddnsView.SelectedIndexChanged += new System.EventHandler(this.ddnsView_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Service";
+            this.columnHeader1.Width = 104;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Settings";
+            this.columnHeader2.Width = 662;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.daBtn,
+            this.deBtn,
+            this.ddBtn,
+            this.drBtn,
+            this.toolStripMenuItem1,
+            this.dcBtn,
+            this.toolStripMenuItem2,
+            this.dwBtr,
+            this.duBtn,
+            this.toolStripMenuItem3,
+            this.r1Btn,
+            this.rrBtn});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(163, 220);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
+            // 
+            // daBtn
+            // 
+            this.daBtn.Name = "daBtn";
+            this.daBtn.Size = new System.Drawing.Size(162, 22);
+            this.daBtn.Text = "Add ...";
+            this.daBtn.Click += new System.EventHandler(this.daBtn_Click);
+            // 
+            // deBtn
+            // 
+            this.deBtn.Name = "deBtn";
+            this.deBtn.Size = new System.Drawing.Size(162, 22);
+            this.deBtn.Text = "Edit ...";
+            this.deBtn.Click += new System.EventHandler(this.deBtn_Click);
+            // 
+            // ddBtn
+            // 
+            this.ddBtn.Name = "ddBtn";
+            this.ddBtn.Size = new System.Drawing.Size(162, 22);
+            this.ddBtn.Text = "Copy";
+            this.ddBtn.Click += new System.EventHandler(this.ddBtn_Click);
+            // 
+            // drBtn
+            // 
+            this.drBtn.Name = "drBtn";
+            this.drBtn.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.drBtn.Size = new System.Drawing.Size(162, 22);
+            this.drBtn.Text = "Remove ...";
+            this.drBtn.Click += new System.EventHandler(this.drBtn_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(159, 6);
+            // 
+            // dcBtn
+            // 
+            this.dcBtn.Name = "dcBtn";
+            this.dcBtn.Size = new System.Drawing.Size(162, 22);
+            this.dcBtn.Text = "Clear All";
+            this.dcBtn.Click += new System.EventHandler(this.dcBtn_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(159, 6);
+            // 
+            // dwBtr
+            // 
+            this.dwBtr.Name = "dwBtr";
+            this.dwBtr.Size = new System.Drawing.Size(162, 22);
+            this.dwBtr.Text = "Update Host(s)";
+            this.dwBtr.Click += new System.EventHandler(this.dwBtn_Click);
+            // 
+            // duBtn
+            // 
+            this.duBtn.Name = "duBtn";
+            this.duBtn.Size = new System.Drawing.Size(162, 22);
+            this.duBtn.Text = "Update all Hosts";
+            this.duBtn.Click += new System.EventHandler(this.duBtn_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(159, 6);
+            // 
+            // r1Btn
+            // 
+            this.r1Btn.Name = "r1Btn";
+            this.r1Btn.Size = new System.Drawing.Size(162, 22);
+            this.r1Btn.Text = "Resolve Host(s)";
+            this.r1Btn.Click += new System.EventHandler(this.r1Btn_Click);
+            // 
+            // rrBtn
+            // 
+            this.rrBtn.Name = "rrBtn";
+            this.rrBtn.Size = new System.Drawing.Size(162, 22);
+            this.rrBtn.Text = "Resolve all Hosts";
+            this.rrBtn.Click += new System.EventHandler(this.rrBtn_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.ddnsLink);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(3, 346);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(787, 25);
+            this.panel2.TabIndex = 1;
+            // 
+            // ddnsLink
+            // 
+            this.ddnsLink.AutoSize = true;
+            this.ddnsLink.Location = new System.Drawing.Point(3, 6);
+            this.ddnsLink.Name = "ddnsLink";
+            this.ddnsLink.Size = new System.Drawing.Size(112, 13);
+            this.ddnsLink.TabIndex = 15;
+            this.ddnsLink.TabStop = true;
+            this.ddnsLink.Text = "http://localhost:8081/";
+            this.ddnsLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.openDDNSLink);
+            // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.ipcsCB);
             this.tabPage4.Controls.Add(this.oosCB);
             this.tabPage4.Controls.Add(this.onTopCB);
             this.tabPage4.Controls.Add(this.linkLabel1);
@@ -314,6 +535,18 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Settings Page";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // ipcsCB
+            // 
+            this.ipcsCB.AutoSize = true;
+            this.ipcsCB.Checked = true;
+            this.ipcsCB.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ipcsCB.Location = new System.Drawing.Point(8, 38);
+            this.ipcsCB.Name = "ipcsCB";
+            this.ipcsCB.Size = new System.Drawing.Size(151, 17);
+            this.ipcsCB.TabIndex = 17;
+            this.ipcsCB.Text = "Get IP/Country On Startup";
+            this.ipcsCB.UseVisualStyleBackColor = true;
             // 
             // oosCB
             // 
@@ -421,7 +654,7 @@
             // onlyLocalCB
             // 
             this.onlyLocalCB.AutoSize = true;
-            this.onlyLocalCB.Location = new System.Drawing.Point(8, 29);
+            this.onlyLocalCB.Location = new System.Drawing.Point(8, 22);
             this.onlyLocalCB.Name = "onlyLocalCB";
             this.onlyLocalCB.Size = new System.Drawing.Size(152, 17);
             this.onlyLocalCB.TabIndex = 7;
@@ -505,7 +738,8 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
+            this.toolStripStatusLabel2,
+            this.mypLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(801, 22);
@@ -524,12 +758,16 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(115, 17);
             this.toolStripStatusLabel2.Text = "Processed Invokes: 0";
             // 
-            // clearCountersToolStripMenuItem
+            // mypLabel
             // 
-            this.clearCountersToolStripMenuItem.Name = "clearCountersToolStripMenuItem";
-            this.clearCountersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.clearCountersToolStripMenuItem.Text = "Clear Counters";
-            this.clearCountersToolStripMenuItem.Click += new System.EventHandler(this.clearCountersToolStripMenuItem_Click);
+            this.mypLabel.Name = "mypLabel";
+            this.mypLabel.Size = new System.Drawing.Size(88, 17);
+            this.mypLabel.Text = "My IP: 127.0.0.1";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(178, 6);
             // 
             // Form1
             // 
@@ -560,6 +798,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.defInvoke)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.defPort)).EndInit();
@@ -610,6 +852,31 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.CheckBox oosCB;
         private System.Windows.Forms.ToolStripMenuItem clearCountersToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.ListView ddnsView;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.LinkLabel ddnsLink;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem daBtn;
+        private System.Windows.Forms.ToolStripMenuItem deBtn;
+        private System.Windows.Forms.ToolStripMenuItem drBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dcBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem duBtn;
+        private System.Windows.Forms.ToolStripMenuItem ddBtn;
+        private System.Windows.Forms.ToolStripMenuItem updateDDNSHostsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dwBtr;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem rrBtn;
+        private System.Windows.Forms.ToolStripMenuItem r1Btn;
+        private System.Windows.Forms.ToolStripMenuItem resolveDDNSHostsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mipBtn;
+        private System.Windows.Forms.CheckBox ipcsCB;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripStatusLabel mypLabel;
     }
 }
 

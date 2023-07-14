@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationLog.cs" />
+    <Compile Include="IPCountry.cs" />
     <Compile Include="FileSys.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
