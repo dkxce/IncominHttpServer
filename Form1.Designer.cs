@@ -66,6 +66,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.clearCountersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -99,14 +100,15 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clearToolStripMenuItem});
+            this.clearToolStripMenuItem,
+            this.clearCountersToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clearToolStripMenuItem.Text = "Clear Logs";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
@@ -522,6 +524,13 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(115, 17);
             this.toolStripStatusLabel2.Text = "Processed Invokes: 0";
             // 
+            // clearCountersToolStripMenuItem
+            // 
+            this.clearCountersToolStripMenuItem.Name = "clearCountersToolStripMenuItem";
+            this.clearCountersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearCountersToolStripMenuItem.Text = "Clear Counters";
+            this.clearCountersToolStripMenuItem.Click += new System.EventHandler(this.clearCountersToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -600,6 +609,7 @@
         private System.Windows.Forms.CheckBox onTopCB;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.CheckBox oosCB;
+        private System.Windows.Forms.ToolStripMenuItem clearCountersToolStripMenuItem;
     }
 }
 

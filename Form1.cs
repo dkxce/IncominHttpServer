@@ -75,9 +75,9 @@ namespace IncominHttpServer
                 }
                 catch (Exception ex)
                 {
+                    httpServer = null;
                     ApplicationLog.WriteDatedLn($"Error: {ex.Message}");
-                    MessageBox.Show($"{ex.Message}", "Incoming Http Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    httpServer = null;                    
+                    MessageBox.Show($"{ex.Message}", "Incoming Http Server", MessageBoxButtons.OK, MessageBoxIcon.Error);                    
                 };
             };
         }
@@ -242,6 +242,16 @@ namespace IncominHttpServer
         private void toggleonTopCB(object sender, EventArgs e)
         {
             this.TopMost = onTopCB.Checked;
+        }
+
+        private void clearCountersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            qieries = 0;
+            invokes = 0;
+            toolStripStatusLabel1.Text = $"Incoming queries: {qieries}";
+            toolStripStatusLabel2.Text = $"Processed Invokes: {invokes}";
+            if(httpServer != null)
+                this.Text = $"{tmpTitle} - Started at {httpServer.ServerPort} [{qieries}]";            
         }
     }
 

@@ -81,7 +81,7 @@ namespace IncominHttpServer
                     }
                     catch (Exception ex) {
                         ApplicationLog.WriteLn($"Error: {ex}"); 
-                        ApplicationLog.WriteInvoke($"Error: {ex}"); 
+                        ApplicationLog.WriteInvoke($"HttpWebResponse (Invoke_1) from {url}\r\nError: {ex}"); 
                     };
 
                 }));
