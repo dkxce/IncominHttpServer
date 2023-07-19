@@ -107,6 +107,7 @@
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.alwaysUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -809,6 +810,7 @@
             this.updateAllDDNSHostsToolStripMenuItem,
             this.toolStripMenuItem7,
             this.automaticDDNSUpdatesToolStripMenuItem,
+            this.alwaysUpdateToolStripMenuItem,
             this.allowTrayNotificationsToolStripMenuItem,
             this.toolStripMenuItem5,
             this.copyIPToClipboardToolStripMenuItem,
@@ -817,7 +819,7 @@
             this.toolStripMenuItem6,
             this.exitToolStripMenuItem});
             this.contextMenuStrip3.Name = "contextMenuStrip3";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(211, 182);
+            this.contextMenuStrip3.Size = new System.Drawing.Size(211, 226);
             this.contextMenuStrip3.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip3_Opening);
             // 
             // resolveAllDDNSHostsToolStripMenuItem
@@ -896,6 +898,14 @@
             // 
             this.timer.Interval = 500;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // alwaysUpdateToolStripMenuItem
+            // 
+            this.alwaysUpdateToolStripMenuItem.Enabled = false;
+            this.alwaysUpdateToolStripMenuItem.Name = "alwaysUpdateToolStripMenuItem";
+            this.alwaysUpdateToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.alwaysUpdateToolStripMenuItem.Text = "Always Update";
+            this.alwaysUpdateToolStripMenuItem.Click += new System.EventHandler(this.alwaysUpdateToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1021,6 +1031,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem hideWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allowTrayNotificationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alwaysUpdateToolStripMenuItem;
     }
 }
 

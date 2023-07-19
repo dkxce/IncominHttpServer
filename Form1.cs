@@ -255,7 +255,8 @@ namespace IncominHttpServer
                     foreach (DDNSService dnss in cfg.dDNSServices)
                         ddnsView.Items.Add(new DNSListViewItem(dnss));
                 automaticDDNSUpdatesToolStripMenuItem.Checked = cfg.AutomaticUpdateDDNS && ddnsView.Items.Count > 0;
-                allowTrayNotificationsToolStripMenuItem.Checked = cfg.allowTrayNotifications;
+                allowTrayNotificationsToolStripMenuItem.Checked = cfg.AllowTrayNotifications;
+                alwaysUpdateToolStripMenuItem.Checked = cfg.AlwaysUpdate;
                 ipcsCB.Checked = cfg.GetIPCountryOnStartUp;
             }
             catch { };
@@ -288,7 +289,8 @@ namespace IncominHttpServer
                 Config cfg = new Config();
                 cfg.AllowEmptyRequest = allowEmptyCB.Checked;
                 cfg.AutomaticUpdateDDNS = automaticDDNSUpdatesToolStripMenuItem.Checked;
-                cfg.allowTrayNotifications = allowTrayNotificationsToolStripMenuItem.Checked;
+                cfg.AllowTrayNotifications = allowTrayNotificationsToolStripMenuItem.Checked;
+                cfg.AlwaysUpdate = alwaysUpdateToolStripMenuItem.Checked;
                 cfg.AllowOnlyLocalhost = onlyLocalCB.Checked;
                 cfg.DefaultResponseCode = (ushort)defCode.Value;
                 cfg.DefaultResponseText = textBox5.Text.Trim().Replace("\r\n", @"\n");
@@ -750,10 +752,10 @@ namespace IncominHttpServer
             if (ts.TotalMinutes < 15) return;
 
             PreviousDT = DateTime.UtcNow;
-            ProcessAutomatic(automaticDDNSUpdatesToolStripMenuItem.Checked && ddnsView.Items.Count > 0, automaticDDNSUpdatesToolStripMenuItem.Checked, allowTrayNotificationsToolStripMenuItem.Checked);
+            ProcessAutomatic(automaticDDNSUpdatesToolStripMenuItem.Checked && ddnsView.Items.Count > 0, automaticDDNSUpdatesToolStripMenuItem.Checked, allowTrayNotificationsToolStripMenuItem.Checked, alwaysUpdateToolStripMenuItem.Checked);
         }
 
-        private void ProcessAutomatic(bool check, bool enabled, bool notify)
+        private void ProcessAutomatic(bool check, bool enabled, bool notify, bool always)
         {
             List<DDNSService> svcs = new List<DDNSService>();
             if(ddnsView.Items.Count > 0)
@@ -784,16 +786,17 @@ namespace IncominHttpServer
 
                 // CHECK HOSTS
                 addns.Text = $"AutoDDNS: Resolving Hosts ({DateTime.Now}) [{ddnsUpdates}/{ddnsChecks}/{ipChecks}] ...";
-                bool update = true;
-                for (int i = 0; i < svcs.Count; i++)
-                {
-                    (string host, string ip) = ProcessResolve(svcs[i], false);
-                    if (string.IsNullOrEmpty(ip)) break;
-                    MatchCollection mx = (new Regex("[\\w\\.]+", RegexOptions.IgnoreCase)).Matches(ip);
-                    foreach (Match mc in mx)
-                        if (mc.Groups[0].Value == MyIP)
-                            update = false;
-                };
+                bool update = always;
+                if(!update)
+                    for (int i = 0; i < svcs.Count; i++)
+                    {
+                        (string host, string ip) = ProcessResolve(svcs[i], false);
+                        if (string.IsNullOrEmpty(ip)) { update = true; break; };
+                        MatchCollection mx = (new Regex("[\\w\\.]+", RegexOptions.IgnoreCase)).Matches(ip);
+                        foreach (Match mc in mx)
+                            if (mc.Groups[0].Value != MyIP)
+                                update = true;
+                    };
                 ddnsChecks++;
                 if (update)
                 {
@@ -828,6 +831,7 @@ namespace IncominHttpServer
             resolveAllDDNSHostsToolStripMenuItem.Enabled = ddnsView.Items.Count > 0;
             updateAllDDNSHostsToolStripMenuItem.Enabled = ddnsView.Items.Count > 0;
             automaticDDNSUpdatesToolStripMenuItem.Enabled = ddnsView.Items.Count > 0;
+            alwaysUpdateToolStripMenuItem.Enabled = ddnsView.Items.Count > 0;
             hideWindowToolStripMenuItem.Text = !this.ShowInTaskbar || !this.Visible ? "Show Window" : "Hide Window";
         }
 
@@ -887,12 +891,18 @@ namespace IncominHttpServer
         {
             allowTrayNotificationsToolStripMenuItem.Checked = !allowTrayNotificationsToolStripMenuItem.Checked;
         }
+
+        private void alwaysUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            alwaysUpdateToolStripMenuItem.Checked = !alwaysUpdateToolStripMenuItem.Checked;
+        }
     }
 
     public class Config: dkxce.IniSaved<Config>
     {
         public bool AutomaticUpdateDDNS = false;
-        public bool allowTrayNotifications = false;
+        public bool AllowTrayNotifications = false;
+        public bool AlwaysUpdate = false;
         public bool AllowEmptyRequest = true;
         public bool AllowOnlyLocalhost = false;
         public ushort DefaultResponseCode = 404;
