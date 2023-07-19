@@ -37,7 +37,7 @@ namespace IncominHttpServer
         public bool Invoke_1(ClientRequest Request)
         {
             bool res = true;
-            const string url = "http://localhost:8800/";
+            const string url = "http://localhost:8800/api/v1/pay/buy/";
             if (!string.IsNullOrEmpty(Request.Authorization) && Request.Authorization.StartsWith("Bearer") && Request.Headers.ContainsKey("Provider"))
             {
                 res = false;

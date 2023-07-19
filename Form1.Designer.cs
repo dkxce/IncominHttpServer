@@ -36,6 +36,7 @@
             this.clearCountersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDDNSHostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resolveDDNSHostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.mipBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -91,7 +92,21 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.mypLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.addns = new System.Windows.Forms.ToolStripStatusLabel();
+            this.trayIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.resolveAllDDNSHostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateAllDDNSHostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
+            this.automaticDDNSUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allowTrayNotificationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+            this.copyIPToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
+            this.hideWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -108,6 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.defPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.defCode)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.contextMenuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // startstop
@@ -119,7 +135,7 @@
             this.startstop.ForeColor = System.Drawing.Color.Black;
             this.startstop.Location = new System.Drawing.Point(0, 0);
             this.startstop.Name = "startstop";
-            this.startstop.Size = new System.Drawing.Size(801, 28);
+            this.startstop.Size = new System.Drawing.Size(905, 28);
             this.startstop.TabIndex = 0;
             this.startstop.Text = "START";
             this.startstop.UseVisualStyleBackColor = false;
@@ -135,7 +151,7 @@
             this.toolStripMenuItem4,
             this.mipBtn});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 142);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 120);
             // 
             // clearToolStripMenuItem
             // 
@@ -165,6 +181,11 @@
             this.resolveDDNSHostsToolStripMenuItem.Text = "Resolve DDNS Hosts";
             this.resolveDDNSHostsToolStripMenuItem.Click += new System.EventHandler(this.resolveDDNSHostsToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(178, 6);
+            // 
             // mipBtn
             // 
             this.mipBtn.Name = "mipBtn";
@@ -185,7 +206,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(801, 400);
+            this.tabControl1.Size = new System.Drawing.Size(905, 400);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -194,7 +215,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(793, 374);
+            this.tabPage1.Size = new System.Drawing.Size(897, 374);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Processing Log";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -210,7 +231,7 @@
             this.prcLog.Multiline = true;
             this.prcLog.Name = "prcLog";
             this.prcLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.prcLog.Size = new System.Drawing.Size(787, 368);
+            this.prcLog.Size = new System.Drawing.Size(891, 368);
             this.prcLog.TabIndex = 2;
             this.prcLog.WordWrap = false;
             // 
@@ -220,7 +241,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(793, 374);
+            this.tabPage2.Size = new System.Drawing.Size(897, 374);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Query Log";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -236,7 +257,7 @@
             this.qryLog.Multiline = true;
             this.qryLog.Name = "qryLog";
             this.qryLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.qryLog.Size = new System.Drawing.Size(787, 368);
+            this.qryLog.Size = new System.Drawing.Size(891, 368);
             this.qryLog.TabIndex = 3;
             this.qryLog.WordWrap = false;
             // 
@@ -245,7 +266,7 @@
             this.tabPage3.Controls.Add(this.lqrLog);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(793, 374);
+            this.tabPage3.Size = new System.Drawing.Size(897, 374);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Last Query";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -259,7 +280,7 @@
             this.lqrLog.Multiline = true;
             this.lqrLog.Name = "lqrLog";
             this.lqrLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.lqrLog.Size = new System.Drawing.Size(793, 374);
+            this.lqrLog.Size = new System.Drawing.Size(897, 374);
             this.lqrLog.TabIndex = 3;
             this.lqrLog.WordWrap = false;
             // 
@@ -268,7 +289,7 @@
             this.tabPage6.Controls.Add(this.lrsLog);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(793, 374);
+            this.tabPage6.Size = new System.Drawing.Size(897, 374);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Last Response";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -282,7 +303,7 @@
             this.lrsLog.Multiline = true;
             this.lrsLog.Name = "lrsLog";
             this.lrsLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.lrsLog.Size = new System.Drawing.Size(793, 374);
+            this.lrsLog.Size = new System.Drawing.Size(897, 374);
             this.lrsLog.TabIndex = 5;
             this.lrsLog.WordWrap = false;
             // 
@@ -293,7 +314,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(793, 374);
+            this.tabPage5.Size = new System.Drawing.Size(897, 374);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Invoke Data";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -307,7 +328,7 @@
             this.invLog.Multiline = true;
             this.invLog.Name = "invLog";
             this.invLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.invLog.Size = new System.Drawing.Size(787, 345);
+            this.invLog.Size = new System.Drawing.Size(891, 345);
             this.invLog.TabIndex = 3;
             this.invLog.WordWrap = false;
             // 
@@ -318,7 +339,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(787, 23);
+            this.panel1.Size = new System.Drawing.Size(891, 23);
             this.panel1.TabIndex = 4;
             // 
             // defInvoke
@@ -358,7 +379,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(793, 374);
+            this.tabPage7.Size = new System.Drawing.Size(897, 374);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "DDNS";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -376,7 +397,7 @@
             this.ddnsView.Location = new System.Drawing.Point(3, 3);
             this.ddnsView.Name = "ddnsView";
             this.ddnsView.ShowGroups = false;
-            this.ddnsView.Size = new System.Drawing.Size(787, 343);
+            this.ddnsView.Size = new System.Drawing.Size(891, 343);
             this.ddnsView.TabIndex = 0;
             this.ddnsView.UseCompatibleStateImageBehavior = false;
             this.ddnsView.View = System.Windows.Forms.View.Details;
@@ -496,7 +517,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(3, 346);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(787, 25);
+            this.panel2.Size = new System.Drawing.Size(891, 25);
             this.panel2.TabIndex = 1;
             // 
             // ddnsLink
@@ -531,7 +552,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(793, 374);
+            this.tabPage4.Size = new System.Drawing.Size(897, 374);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Settings Page";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -739,10 +760,11 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
-            this.mypLabel});
+            this.mypLabel,
+            this.addns});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(801, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(905, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -751,12 +773,14 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(111, 17);
             this.toolStripStatusLabel1.Text = "Incoming queries: 0";
+            this.toolStripStatusLabel1.Visible = false;
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(115, 17);
             this.toolStripStatusLabel2.Text = "Processed Invokes: 0";
+            this.toolStripStatusLabel2.Visible = false;
             // 
             // mypLabel
             // 
@@ -764,16 +788,120 @@
             this.mypLabel.Size = new System.Drawing.Size(88, 17);
             this.mypLabel.Text = "My IP: 127.0.0.1";
             // 
-            // toolStripMenuItem4
+            // addns
             // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(178, 6);
+            this.addns.Name = "addns";
+            this.addns.Size = new System.Drawing.Size(115, 17);
+            this.addns.Text = "AutoDDNS: Disabled";
+            this.addns.ToolTipText = "[DDNS Updates / DDNS Checks / IP Checks ]";
+            // 
+            // trayIcon
+            // 
+            this.trayIcon.ContextMenuStrip = this.contextMenuStrip3;
+            this.trayIcon.Text = "DDNS";
+            this.trayIcon.Visible = true;
+            this.trayIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.trayIcon_MouseDoubleClick);
+            // 
+            // contextMenuStrip3
+            // 
+            this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resolveAllDDNSHostsToolStripMenuItem,
+            this.updateAllDDNSHostsToolStripMenuItem,
+            this.toolStripMenuItem7,
+            this.automaticDDNSUpdatesToolStripMenuItem,
+            this.allowTrayNotificationsToolStripMenuItem,
+            this.toolStripMenuItem5,
+            this.copyIPToClipboardToolStripMenuItem,
+            this.toolStripMenuItem8,
+            this.hideWindowToolStripMenuItem,
+            this.toolStripMenuItem6,
+            this.exitToolStripMenuItem});
+            this.contextMenuStrip3.Name = "contextMenuStrip3";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(211, 182);
+            this.contextMenuStrip3.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip3_Opening);
+            // 
+            // resolveAllDDNSHostsToolStripMenuItem
+            // 
+            this.resolveAllDDNSHostsToolStripMenuItem.Enabled = false;
+            this.resolveAllDDNSHostsToolStripMenuItem.Name = "resolveAllDDNSHostsToolStripMenuItem";
+            this.resolveAllDDNSHostsToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.resolveAllDDNSHostsToolStripMenuItem.Text = "Resolve All DDNS Hosts";
+            this.resolveAllDDNSHostsToolStripMenuItem.Click += new System.EventHandler(this.resolveAllDDNSHostsToolStripMenuItem_Click);
+            // 
+            // updateAllDDNSHostsToolStripMenuItem
+            // 
+            this.updateAllDDNSHostsToolStripMenuItem.Enabled = false;
+            this.updateAllDDNSHostsToolStripMenuItem.Name = "updateAllDDNSHostsToolStripMenuItem";
+            this.updateAllDDNSHostsToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.updateAllDDNSHostsToolStripMenuItem.Text = "Update All DDNS Hosts";
+            this.updateAllDDNSHostsToolStripMenuItem.Click += new System.EventHandler(this.updateAllDDNSHostsToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(207, 6);
+            // 
+            // automaticDDNSUpdatesToolStripMenuItem
+            // 
+            this.automaticDDNSUpdatesToolStripMenuItem.Enabled = false;
+            this.automaticDDNSUpdatesToolStripMenuItem.Name = "automaticDDNSUpdatesToolStripMenuItem";
+            this.automaticDDNSUpdatesToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.automaticDDNSUpdatesToolStripMenuItem.Text = "Automatic DDNS Updates";
+            this.automaticDDNSUpdatesToolStripMenuItem.Click += new System.EventHandler(this.automaticDDNSUpdatesToolStripMenuItem_Click);
+            // 
+            // allowTrayNotificationsToolStripMenuItem
+            // 
+            this.allowTrayNotificationsToolStripMenuItem.Name = "allowTrayNotificationsToolStripMenuItem";
+            this.allowTrayNotificationsToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.allowTrayNotificationsToolStripMenuItem.Text = "Allow Tray Notifications";
+            this.allowTrayNotificationsToolStripMenuItem.Click += new System.EventHandler(this.allowTrayNotificationsToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(207, 6);
+            // 
+            // copyIPToClipboardToolStripMenuItem
+            // 
+            this.copyIPToClipboardToolStripMenuItem.Name = "copyIPToClipboardToolStripMenuItem";
+            this.copyIPToClipboardToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.copyIPToClipboardToolStripMenuItem.Text = "Copy IP to Clipboard";
+            this.copyIPToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyIPToClipboardToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(207, 6);
+            // 
+            // hideWindowToolStripMenuItem
+            // 
+            this.hideWindowToolStripMenuItem.Name = "hideWindowToolStripMenuItem";
+            this.hideWindowToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.hideWindowToolStripMenuItem.Text = "Hide Window";
+            this.hideWindowToolStripMenuItem.Click += new System.EventHandler(this.hideWindowToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(207, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 500;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 450);
+            this.ClientSize = new System.Drawing.Size(905, 450);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.startstop);
@@ -808,6 +936,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.defCode)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.contextMenuStrip3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -877,6 +1006,21 @@
         private System.Windows.Forms.CheckBox ipcsCB;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.ToolStripStatusLabel mypLabel;
+        private System.Windows.Forms.NotifyIcon trayIcon;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
+        private System.Windows.Forms.ToolStripMenuItem copyIPToClipboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem updateAllDDNSHostsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resolveAllDDNSHostsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem automaticDDNSUpdatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel addns;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripMenuItem hideWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allowTrayNotificationsToolStripMenuItem;
     }
 }
 
